@@ -1,0 +1,30 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Slabo+27px');
+
+/*=====================
+Variables
+=====================*/
+
+$brand-font-color: #4b0082;
+$content-font-color: #585858;
+$content-back-color: #74e3a3;
+$logo-font: 'Patrick Hand SC', Georgia, sans-serif;
+$body-font: 'Slabo', Georgia, sans-serif;
+
+/*=====================
+Navigation
+=====================*/
+.brand-font {
+  font-family: $logo-font;
+  font-size: 2em;
+  color: $brand-font-color;
+}
+
+.navbar {
+  color: $brand-font-color;
+}
