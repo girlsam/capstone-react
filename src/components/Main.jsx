@@ -2,33 +2,15 @@ import React, { Component } from 'react';
 import Fetch from 'isomorphic-fetch';
 import _ from 'lodash';
 
-import NavBar from './NavBar';
-
-const URL='https://www.newmate.herokuapp.com';
+import NavigationBar from './NavBar';
 
 export default class Main extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      users: []
-    };
-  }
-
-  componentDidMount(users) {
-    fetch(`${URL}/users`)
-    .then(res => res.json())
-    .then(json => this.setState({users: json.users}))
-    console.log(users);
-  }
-
   render() {
+
     return (
       <div>
-        <NavBar/>
-        <div className="container-fluid">
-          // <div>{this.props.users}</div>
-        </div>
+        <NavigationBar />
+        <img src="https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?dpr=2&auto=format&fit=crop&w=767&h=510&q=80&cs=tinysrgb&crop=" className="hero"/>
       </div>
     )
   }

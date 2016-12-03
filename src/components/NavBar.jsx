@@ -1,21 +1,15 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { Navbar, NavItem } from 'react-materialize';
+import { Link } from 'react-router';
 
-const NavBar = () => {
+const NavigationBar = () => {
   return(
-    <nav className="navbar navbar-default" id="nav">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <a className="navbar-brand brand-font"><span className="glyphicon glyphicon-tent" aria-hidden="true"></span>&nbsp;&nbsp;Newmate - Get a Roommate</a>
-        </div>
-        <div className="collapse navbar-collapse">
-          <ul className="nav navbar-nav navbar-right">
-            <li><a href="/addresses">Find Rooms</a></li>
-            <li><a href="/contacts">Find Mates</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navbar className="brand-font cyan" brand='&nbsp;Newmate - Get a Roommate' right>
+      <NavItem className="nav-link">Get a Room</NavItem>
+      <NavItem href='components.html' className="nav-link">Get a Mate</NavItem>
+    </Navbar>
   )
 }
 
-export default NavBar;
+export default NavigationBar;

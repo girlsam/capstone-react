@@ -31,8 +31,9 @@
     "babel-preset-stage-1": "^6.1.18",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^3.10.1",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-materialize": "^0.17.6",
     "react-router": "^3.0.0"
   }
 }

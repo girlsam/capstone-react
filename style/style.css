@@ -12,10 +12,29 @@ Navigation
 =====================*/
 .brand-font {
   font-family: "Patrick Hand SC", Georgia, sans-serif;
-  font-size: 2em;
-  color: #4b0082; }
+  font-size: 2em; }
 
-.navbar {
-  color: #4b0082; }
+.nav-link {
+  font-family: "Slabo 27px", Georgia, sans-serif; }
+
+.nav-image {
+  border-radius: 50%;
+  margin-left: 60px;
+  margin-top: 30px; }
+
+/*=====================
+User Cards
+=====================*/
+.profile-image {
+  width: 100vh;
+  margin: 3em;
+  opacity: 0.8; }
+
+/*=====================
+Landing
+=====================*/
+.hero {
+  opacity: 0.5;
+  max-width: 1100px; }
 
 /*# sourceMappingURL=style.css.map */
