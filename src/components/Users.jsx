@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Col, Card, CardTitle } from 'react-materialize';
+import { Col, Jumbotron, Button } from 'react-bootstrap';
+import Fetch from 'isomorphic-fetch';
 
 //components
-import NavigationBar from './NavBar';
+import NavbarInstance from './NavBar';
 
 const URL='https://newmate.herokuapp.com';
 
@@ -38,15 +39,19 @@ export default class User extends Component {
     return (
       <div>
         <div className="container-fluid">
-          <NavigationBar />
-
+          <NavbarInstance />
           {this.state.users.map(el => {
-              return (
-                <Card className="profile-image" header={<CardTitle reveal image={el.image} waves='light'/>}
-                title={<p>{el.first_name}, {el.age}</p>}
-                reveal={<p>{el.description}</p>}>
-                <p><a href="#">Check Me Out!</a></p>
-              </Card>
+            return (
+              <Col s={12} md={6}>
+                <Jumbotron key={el.id}>
+                  <img className="profile-image" src={el.image}/>
+                  <h4 className="card-name">{el.first_name}, {el.age}</h4>
+                  <p className="card-descr">{el.description}</p>
+                  <hr></hr>
+                  <p>Sleep Habits: {el.morning_sleep} & {el.night_sleep}</p>
+                  <p>Daily Hours: {el.weekday}</p>
+                </Jumbotron>
+              </Col>
             )
           })}
         </div>
