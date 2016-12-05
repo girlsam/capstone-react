@@ -4,49 +4,108 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Asap');
 
 /*=====================
 Variables
 =====================*/
 
-$brand-font-color: #4b0082;
-$content-font-color: #585858;
-$content-back-color: #74e3a3;
-$logo-font: 'Patrick Hand SC', Georgia, sans-serif;
-$body-font: 'Slabo 27px', Georgia, sans-serif;
+$brand-font-color: #3200c0;
+$content-color: #d4d4d4;
+$logo-font: 'Pacifico', Georgia, sans-serif;
+$body-font: 'Asap', Georgia, sans-serif;
+
+/*=====================
+Mix-ins
+=====================*/
+@mixin article-text($color, $size, $align) {
+  font-family: $body-font;
+  font-size: $size;
+  color: $color;
+  text-align: $align;
+}
+
+@mixin branding-font($color, $size) {
+  font-family: $logo-font;
+  color: $color;
+  font-size: $size;
+}
+
+/*=====================
+Hero
+=====================*/
+.hero {
+  margin-top: -20px;
+  opacity: 0.5;
+  max-width: 800px;
+  height: 400px;
+  position: relative;
+}
+
+.caption {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+}
 
 /*=====================
 Navigation
 =====================*/
+
+.nav {
+  color: #fff;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
 .brand-font {
   font-family: $logo-font;
   font-size: 2em;
+  color: #fff;
 }
 
 .nav-link {
   font-family: $body-font;
+  color: #fff;
 }
 
-.nav-image {
-  border-radius: 50%;
-  margin-left: 60px;
-  margin-top: 30px;
+.navbar {
+  margin-left: -20px;
+  width: 105%;
+  background-color: $brand-font-color;
+  border-color: $brand-font-color;
 }
 
 /*=====================
 User Cards
 =====================*/
 .profile-image {
-  width: 100vh;
-  margin: 3em;
+  width: 100%;
+  border-radius: 2%;
+  margin: 0 auto;
   opacity: 0.8;
 }
 
-/*=====================
-Landing
-=====================*/
-.hero {
-  opacity: 0.5;
-  max-width: 1100px;
+.jumbotron {
+  background-color: $content-color;
 }
+
+.card-name { @include article-text(white, 3em, center); }
+
+.card-descr { @include article-text(white, 1em, justify); }
+
+/*=====================
+Rooms Cards
+=====================*/
+.rooms-image {
+  width: 100px;
+  border-radius: 2%;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.rooms-user-descr { @include article-text(white, 1em, inherit); }
