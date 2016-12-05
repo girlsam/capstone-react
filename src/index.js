@@ -14,9 +14,9 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Main} />
-      <Route path="404" component={Default404} />
       <Route path="/users" component={User} />
       <Route path="/rooms" component={Room} />
+      <Route path="/404" component={Default404} />
       <Redirect from="*" to="/404" />
     </Route>
   </Router>
