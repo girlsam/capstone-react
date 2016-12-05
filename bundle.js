@@ -93,9 +93,9 @@
 	    _reactRouter.Route,
 	    { path: '/', component: _app2.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Main2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '404', component: _Default2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/users', component: _Users2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/rooms', component: _Rooms2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/404', component: _Default2.default }),
 	    _react2.default.createElement(_reactRouter.Redirect, { from: '*', to: '/404' })
 	  )
 	), document.querySelector('.app'));
