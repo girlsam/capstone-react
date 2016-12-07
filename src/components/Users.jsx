@@ -99,14 +99,7 @@ export default class User extends Component {
                   <Modal.Header closeButton>
                     <Modal.Title className="modal-name">{el.first_name}, {el.age}</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>
-                    <Chat />
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Pager>
-                      <Pager.Item hre f="#" className="buttons" onClick={this.close}>Close</Pager.Item>
-                    </Pager>
-                  </Modal.Footer>
+                  <Chat />
                 </Modal>
               </Col>
             )

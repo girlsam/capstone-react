@@ -195,4 +195,70 @@ Rooms Cards
   color: black;
   text-align: center; }
 
+/*=====================
+Chat
+=====================*/
+.chat_input {
+  position: absolute;
+  bottom: 0;
+  width: calc(100%);
+  padding: 10px 4px 6px;
+  background: white;
+  border-radius: 2%; }
+
+.chat_text {
+  width: calc(85% - 10px);
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 5px 5px;
+  vertical-align: top;
+  font-family: "Montserrat", sans-serif; }
+
+.chat_submit {
+  width: calc(15% - 5px);
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 5px 5px 0;
+  vertical-align: top;
+  border: 1px solid #3dbbeb;
+  cursor: pointer;
+  color: #3dbbeb;
+  border-radius: 0 8px 8px 0;
+  transition: all .4s;
+  background-color: white; }
+
+.chat_submit:hover {
+  background: #3dbbeb;
+  color: white; }
+
+.bubble-1,
+.bubble-2 {
+  padding: 10px;
+  margin: 13px 17px;
+  width: 200px;
+  font-size: 14px; }
+
+.bubble-1 {
+  border: 1px solid #3dbbeb;
+  border-radius: 12px 12px 12px 0; }
+
+.bubble-2 {
+  border: 1px solid #d4d4d4;
+  border-radius: 12px 12px 0 12px;
+  margin-left: 160px; }
+
+.chat_s {
+  margin-left: 100px;
+  height: 400px;
+  overflow-y: scroll;
+  padding: 15px 0 0; }
+
+::-webkit-scrollbar {
+  width: 13px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 0 4px #fff;
+  background: rgba(0, 0, 0, 0.2); }
+
 /*# sourceMappingURL=style.css.map */

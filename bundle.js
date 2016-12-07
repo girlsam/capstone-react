@@ -79,18 +79,17 @@
 	
 	var _Users2 = _interopRequireDefault(_Users);
 	
-	var _Rooms = __webpack_require__(493);
+	var _Rooms = __webpack_require__(494);
 	
 	var _Rooms2 = _interopRequireDefault(_Rooms);
 	
+	var _Chat = __webpack_require__(493);
+	
+	var _Chat2 = _interopRequireDefault(_Chat);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//node modules
-	console.log(_Rooms2.default);
-	
 	//components
-	
-	
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
@@ -101,9 +100,10 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: '404', component: _Default2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/users', component: _Users2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/rooms', component: _Rooms2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/chats', component: _Chat2.default }),
 	    _react2.default.createElement(_reactRouter.Redirect, { from: '*', to: '/404' })
 	  )
-	), document.querySelector('.app'));
+	), document.querySelector('.app')); //node modules
 
 /***/ },
 /* 2 */
@@ -26451,6 +26451,11 @@
 	  }
 	
 	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      io.connect('http://localhost:3000');
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -58267,6 +58272,10 @@
 	
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 	
+	var _Chat = __webpack_require__(493);
+	
+	var _Chat2 = _interopRequireDefault(_Chat);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -58376,7 +58385,9 @@
 	                  ' ',
 	                  _react2.default.createElement(
 	                    _reactBootstrap.Pager.Item,
-	                    { href: '#', className: 'buttons' },
+	                    { href: '#', className: 'buttons', onClick: function onClick() {
+	                        return _this3.open(el.first_name);
+	                      } },
 	                    'Let\'s Chat'
 	                  )
 	                )
@@ -58469,7 +58480,40 @@
 	                    null,
 	                    _react2.default.createElement(
 	                      _reactBootstrap.Pager.Item,
-	                      { href: '#', className: 'buttons', onClick: _this3.close },
+	                      { hre: true, f: '#', className: 'buttons', onClick: _this3.close },
+	                      'Close'
+	                    )
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Modal,
+	                { show: _this3.state.showModal === el.first_name, onHide: _this3.close },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Modal.Header,
+	                  { closeButton: true },
+	                  _react2.default.createElement(
+	                    _reactBootstrap.Modal.Title,
+	                    { className: 'modal-name' },
+	                    el.first_name,
+	                    ', ',
+	                    el.age
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Modal.Body,
+	                  null,
+	                  _react2.default.createElement(_Chat2.default, null)
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Modal.Footer,
+	                  null,
+	                  _react2.default.createElement(
+	                    _reactBootstrap.Pager,
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactBootstrap.Pager.Item,
+	                      { hre: true, f: '#', className: 'buttons', onClick: _this3.close },
 	                      'Close'
 	                    )
 	                  )
@@ -58489,6 +58533,77 @@
 
 /***/ },
 /* 493 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(33);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var socket = void 0;
+	
+	var Chat = function (_Component) {
+	  _inherits(Chat, _Component);
+	
+	  function Chat(props) {
+	    _classCallCheck(this, Chat);
+	
+	    var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
+	
+	    _this.state = {};
+	    return _this;
+	  }
+	
+	  _createClass(Chat, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+	
+	      socket = io.connect('http://localhost:3000');
+	      socket.on('message', function (data) {
+	        console.log(data);
+	        _this2.setState({
+	          messages: data
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        '"Boop"'
+	      );
+	    }
+	  }]);
+	
+	  return Chat;
+	}(_react.Component);
+	
+	exports.default = Chat;
+
+/***/ },
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58717,23 +58832,24 @@
 	                      _react2.default.createElement(
 	                        'p',
 	                        { className: 'modal-text' },
-	                        _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' }),
+	                        _react2.default.createElement('i', { className: 'fa fa-map-marker', 'aria-hidden': 'true' }),
 	                        ' ',
-	                        el.morning_sleep
+	                        el.zip_code
 	                      ),
 	                      _react2.default.createElement(
 	                        'p',
 	                        { className: 'modal-text' },
-	                        _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' }),
+	                        _react2.default.createElement('i', { className: 'fa fa-usd', 'aria-hidden': 'true' }),
 	                        ' ',
-	                        el.night_sleep
+	                        el.rent_cost
 	                      ),
 	                      _react2.default.createElement(
 	                        'p',
 	                        { className: 'modal-text' },
-	                        _react2.default.createElement('i', { className: 'fa fa-fire-extinguisher', 'aria-hidden': 'true' }),
+	                        _react2.default.createElement('i', { className: 'fa fa-calendar-o', 'aria-hidden': 'true' }),
 	                        ' ',
-	                        el.smoker_friendly
+	                        el.lease_length,
+	                        ' Months'
 	                      )
 	                    ),
 	                    _react2.default.createElement(
@@ -58742,25 +58858,25 @@
 	                      _react2.default.createElement(
 	                        'p',
 	                        { className: 'modal-text' },
-	                        _react2.default.createElement('i', { className: 'fa fa-sun-o', 'aria-hidden': 'true' }),
+	                        _react2.default.createElement('i', { className: 'fa fa-check', 'aria-hidden': 'true' }),
 	                        ' ',
-	                        el.weekday
+	                        el.amenity_1
 	                      ),
 	                      _react2.default.createElement(
 	                        'p',
 	                        { className: 'modal-text' },
-	                        _react2.default.createElement('i', { className: 'fa fa-hourglass-end', 'aria-hidden': 'true' }),
-	                        ' It\'s the weekend... ',
-	                        el.weekend,
+	                        _react2.default.createElement('i', { className: 'fa fa-check', 'aria-hidden': 'true' }),
+	                        ' ',
+	                        el.amenity_2,
 	                        ' '
 	                      ),
 	                      _react2.default.createElement(
 	                        'p',
 	                        { className: 'modal-text' },
 	                        ' ',
-	                        _react2.default.createElement('i', { className: 'fa fa-moon-o', 'aria-hidden': 'true' }),
+	                        _react2.default.createElement('i', { className: 'fa fa-check', 'aria-hidden': 'true' }),
 	                        ' ',
-	                        el.after_hours
+	                        el.amenity_3
 	                      )
 	                    )
 	                  )
