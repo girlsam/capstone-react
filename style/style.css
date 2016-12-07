@@ -178,7 +178,7 @@ Rooms Cards
     background: #153dc7; }
 
 .rooms-image {
-  width: 100px;
+  width: 120px;
   border-radius: 2%;
   margin: 0 auto;
   opacity: 0.8; }
@@ -188,5 +188,11 @@ Rooms Cards
   font-size: 1em;
   color: white;
   text-align: inherit; }
+
+.modal-descr {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 1em;
+  color: black;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

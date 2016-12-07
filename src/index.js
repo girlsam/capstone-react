@@ -9,6 +9,7 @@ import Default404 from './components/Default404';
 import Main from './components/Main';
 import User from './components/Users';
 import Room from './components/Rooms';
+console.log(Room);
 
 ReactDOM.render(
   <Router history={browserHistory}>

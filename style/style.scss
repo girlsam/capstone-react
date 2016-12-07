@@ -212,10 +212,12 @@ Rooms Cards
 }
 
 .rooms-image {
-  width: 100px;
+  width: 120px;
   border-radius: 2%;
   margin: 0 auto;
   opacity: 0.8;
 }
 
 .rooms-user-descr { @include article-text(white, 1em, inherit); }
+
+.modal-descr { @include article-text(black, 1em, center);}
