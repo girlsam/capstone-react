@@ -10,19 +10,6 @@ Variables
 /*=====================
 Mix-ins
 =====================*/
-input {
-  font-size: 13px;
-  color: #555;
-  outline: none;
-  border: 1px solid #bbb;
-  padding: 10px 20px;
-  position: relative; }
-  input:focus {
-    border-radius: 10px;
-    transition: 0.3s;
-    border-color: #153dc7;
-    box-shadow: 2px solid #153dc7; }
-
 /*=====================
 Navigation
 =====================*/
@@ -54,34 +41,7 @@ Navigation
   border-color: #153dc7; }
 
 /*=====================
-User Cards
-=====================*/
-.profile-image {
-  width: 100%;
-  border-radius: 2%;
-  margin: 0 auto;
-  opacity: 0.8; }
-
-.jumbotron {
-  background-color: #d4d4d4; }
-
-.card-name {
-  font-family: "Lato", Georgia, sans-serif;
-  font-size: 3em;
-  color: black;
-  text-align: center; }
-
-.card-descr {
-  font-family: "Lato", Georgia, sans-serif;
-  font-size: 1em !important;
-  color: black;
-  text-align: justify; }
-
-.user-tron {
-  background-color: #f7f7f7; }
-
-/*=====================
-User Cards
+Landing
 =====================*/
 .login {
   width: 400px;
@@ -137,6 +97,49 @@ User Cards
 .login input[type="password"]:focus {
   border-color: #888; }
 
+input {
+  font-size: 13px;
+  color: #555;
+  outline: none;
+  border: 1px solid #bbb;
+  padding: 10px 20px;
+  position: relative; }
+  input:focus {
+    border-radius: 10px;
+    transition: 0.3s;
+    border-color: #153dc7;
+    box-shadow: 2px solid #153dc7; }
+
+/*=====================
+User Cards
+=====================*/
+.profile-image {
+  width: 100%;
+  border-radius: 2%;
+  margin: 0 auto;
+  opacity: 0.8; }
+
+.jumbotron {
+  background-color: #d4d4d4; }
+
+.card-name {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 3em;
+  color: black;
+  text-align: center; }
+
+.card-descr {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 1em !important;
+  color: black;
+  text-align: justify; }
+
+.user-tron {
+  background-color: #f7f7f7; }
+
+/*=====================
+
+=====================*/
 /*=====================
 Rooms Cards
 =====================*/
