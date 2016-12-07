@@ -13,6 +13,9 @@ Mix-ins
 /*=====================
 Navigation
 =====================*/
+a {
+  text-decoration: none !important; }
+
 .nav {
   color: white !important; }
 
@@ -138,8 +141,20 @@ User Cards
   background-color: #f7f7f7; }
 
 /*=====================
-
+User Modal
 =====================*/
+.modal-name {
+  font-family: "Pacifico", Georgia, sans-serif;
+  color: #153dc7;
+  font-size: 3em; }
+
+.modal-text {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 1em !important;
+  color: black;
+  text-align: justify;
+  text-transform: capitalize; }
+
 /*=====================
 Rooms Cards
 =====================*/

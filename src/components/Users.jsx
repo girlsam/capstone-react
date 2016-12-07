@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Col, Jumbotron, Button, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter, Pager, PagerItem } from 'react-bootstrap';
+import { Col, Row, Jumbotron, Button, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter, Pager, PagerItem } from 'react-bootstrap';
 import Fetch from 'isomorphic-fetch';
 
 //components
@@ -70,22 +70,28 @@ export default class User extends Component {
                 </Jumbotron>
                 <Modal show={this.state.showModal === el.id} onHide={this.close}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{el.first_name}</Modal.Title>
+                    <Modal.Title className="modal-name">{el.first_name}, {el.age}</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
-                    <h4 className="name"></h4>
-                    <p>About Me: <br/>{el.description}</p>
+                    <p className="modal-text">{el.description}</p>
                     <hr />
-                    <p>{el.morning_sleep}</p>
-                    <p>{el.night_sleep}</p>
-                    <p>{el.smoker_friendly}</p>
-                    <p>{el.weekday}</p>
-                    <p>{el.weekend}</p>
-                    <p>{el.after_hours}</p>
-                    <h4>maybe more</h4>
+                    <Row>
+                      <Col xs={12} md={6} lg={6}>
+                        <p className="modal-text"><i className="fa fa-bed" aria-hidden="true"></i> {el.morning_sleep}</p>
+                        <p className="modal-text"><i className="fa fa-bed" aria-hidden="true"></i> {el.night_sleep}</p>
+                        <p className="modal-text"><i className="fa fa-fire-extinguisher" aria-hidden="true"></i> {el.smoker_friendly}</p>
+                      </Col>
+                      <Col xs={12} md={6} lg={6}>
+                        <p className="modal-text"><i className="fa fa-sun-o" aria-hidden="true"></i> {el.weekday}</p>
+                        <p className="modal-text"><i className="fa fa-hourglass-end" aria-hidden="true"></i> It's the weekend... {el.weekend} </p>
+                        <p className="modal-text"> <i className="fa fa-moon-o" aria-hidden="true"></i> {el.after_hours}</p>
+                      </Col>
+                    </Row>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button onClick={this.close}>Close</Button>
+                    <Pager>
+                      <Pager.Item href="#" className="buttons" onClick={this.close}>Close</Pager.Item>
+                    </Pager>
                   </Modal.Footer>
                 </Modal>
               </Col>

@@ -35,6 +35,9 @@ Mix-ins
 /*=====================
 Navigation
 =====================*/
+a {
+  text-decoration: none !important;
+}
 
 .nav {
   color: white !important;
@@ -174,9 +177,14 @@ User Cards
 }
 
 /*=====================
-
+User Modal
 =====================*/
+.modal-name { @include branding-font($accent-color, 3em); }
 
+.modal-text {
+  @include article-text(black, 1em !important, justify);
+  text-transform: capitalize;
+}
 
 /*=====================
 Rooms Cards

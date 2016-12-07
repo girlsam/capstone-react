@@ -18,7 +18,7 @@ export default class Main extends Component {
               <p><input type="email" placeholder="EMAIL"/></p>
               <p><input type="password" placeholder="PASSWORD"/></p>
               <Pager>
-                <Pager.Item href="#" className="buttons">Post from Mates</Pager.Item>
+                <Pager.Item href="#" className="buttons">Log In</Pager.Item>
               </Pager>
             </form>
           </div>
