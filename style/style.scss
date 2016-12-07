@@ -4,16 +4,17 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Asap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Lato');
 
 /*=====================
 Variables
 =====================*/
 
-$brand-font-color: #3200c0;
+$brand-font-color: #3dbbeb;
 $content-color: #d4d4d4;
+$accent-color: #153dc7;
 $logo-font: 'Pacifico', Georgia, sans-serif;
-$body-font: 'Asap', Georgia, sans-serif;
+$body-font: 'Lato', Georgia, sans-serif;
 
 /*=====================
 Mix-ins
@@ -32,52 +33,122 @@ Mix-ins
 }
 
 /*=====================
-Hero
-=====================*/
-.hero {
-  margin-top: -20px;
-  opacity: 0.5;
-  max-width: 800px;
-  height: 400px;
-  position: relative;
-}
-
-.caption {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 50%;
-}
-
-/*=====================
 Navigation
 =====================*/
 
 .nav {
-  color: #fff;
+  color: white !important;
 }
 
 .navbar-brand {
-  color: #fff;
+  color: white !important;
+}
+
+#basic-nav-dropdown {
+  color: white !important;
+}
+
+.dropdown-toggle {
+  background-color: $accent-color !important;
 }
 
 .brand-font {
   font-family: $logo-font;
   font-size: 2em;
-  color: #fff;
+  color: white !important;
 }
 
 .nav-link {
   font-family: $body-font;
-  color: #fff;
+  color: white !important;
 }
 
 .navbar {
   margin-left: -20px;
   width: 105%;
-  background-color: $brand-font-color;
-  border-color: $brand-font-color;
+  background-color: $accent-color;
+  border-color: $accent-color;
+}
+
+/*=====================
+Landing
+=====================*/
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: $accent-color;
+}
+
+.login-header {
+  background: $accent-color;
+  font-family: $logo-font;
+  padding: 20px;
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+input {
+  font-size: 13px;
+  color: #555;
+  outline: none;
+  border: 1px solid #bbb;
+  padding: 10px 20px;
+  position: relative;
+  &:focus {
+    border-radius: 10px;
+    transition: 0.3s;
+    border-color: $accent-color;
+    box-shadow: 2px solid $accent-color;
+  }
 }
 
 /*=====================
@@ -94,13 +165,44 @@ User Cards
   background-color: $content-color;
 }
 
-.card-name { @include article-text(white, 3em, center); }
+.card-name { @include article-text(black, 3em, center); }
 
-.card-descr { @include article-text(white, 1em, justify); }
+.card-descr { @include article-text(black, 1em !important, justify); }
+
+.user-tron {
+  background-color: #f7f7f7;
+}
+
+/*=====================
+
+=====================*/
+
 
 /*=====================
 Rooms Cards
 =====================*/
+.buttons[role="button"] {
+  font-size: 100px !important;
+}
+
+.buttons > [role="button"] {
+  border-radius: 0%;
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid $accent-color;
+  text-align: center;
+  transition: .3s;
+  font-family: $logo-font;
+  color: $accent-color;
+  font-size: 18px;
+  &:hover {
+    border-radius: 20px;
+    color: #f7f7f7;
+    background: $accent-color;
+  }
+}
+
 .rooms-image {
   width: 100px;
   border-radius: 2%;

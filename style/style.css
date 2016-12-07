@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Lato");
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*=====================
+Variables
+=====================*/
+/*=====================
+Mix-ins
+=====================*/
+/*=====================
+Navigation
+=====================*/
+.nav {
+  color: white !important; }
+
+.navbar-brand {
+  color: white !important; }
+
+#basic-nav-dropdown {
+  color: white !important; }
+
+.dropdown-toggle {
+  background-color: #153dc7 !important; }
+
+.brand-font {
+  font-family: "Pacifico", Georgia, sans-serif;
+  font-size: 2em;
+  color: white !important; }
+
+.nav-link {
+  font-family: "Lato", Georgia, sans-serif;
+  color: white !important; }
+
+.navbar {
+  margin-left: -20px;
+  width: 105%;
+  background-color: #153dc7;
+  border-color: #153dc7; }
+
+/*=====================
+Landing
+=====================*/
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px; }
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #153dc7; }
+
+.login-header {
+  background: #153dc7;
+  font-family: "Pacifico", Georgia, sans-serif;
+  padding: 20px;
+  font-size: 2em;
+  text-align: center;
+  color: #fff; }
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px; }
+
+.login p {
+  padding: 12px; }
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em; }
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555; }
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888; }
+
+input {
+  font-size: 13px;
+  color: #555;
+  outline: none;
+  border: 1px solid #bbb;
+  padding: 10px 20px;
+  position: relative; }
+  input:focus {
+    border-radius: 10px;
+    transition: 0.3s;
+    border-color: #153dc7;
+    box-shadow: 2px solid #153dc7; }
+
+/*=====================
+User Cards
+=====================*/
+.profile-image {
+  width: 100%;
+  border-radius: 2%;
+  margin: 0 auto;
+  opacity: 0.8; }
+
+.jumbotron {
+  background-color: #d4d4d4; }
+
+.card-name {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 3em;
+  color: black;
+  text-align: center; }
+
+.card-descr {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 1em !important;
+  color: black;
+  text-align: justify; }
+
+.user-tron {
+  background-color: #f7f7f7; }
+
+/*=====================
+
+=====================*/
+/*=====================
+Rooms Cards
+=====================*/
+.buttons[role="button"] {
+  font-size: 100px !important; }
+
+.buttons > [role="button"] {
+  border-radius: 0%;
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid #153dc7;
+  text-align: center;
+  transition: .3s;
+  font-family: "Pacifico", Georgia, sans-serif;
+  color: #153dc7;
+  font-size: 18px; }
+  .buttons > [role="button"]:hover {
+    border-radius: 20px;
+    color: #f7f7f7;
+    background: #153dc7; }
+
+.rooms-image {
+  width: 100px;
+  border-radius: 2%;
+  margin: 0 auto;
+  opacity: 0.8; }
+
+.rooms-user-descr {
+  font-family: "Lato", Georgia, sans-serif;
+  font-size: 1em;
+  color: white;
+  text-align: inherit; }
+
+/*# sourceMappingURL=style.css.map */
