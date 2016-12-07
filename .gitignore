@@ -1,3 +1,4 @@
 node_modules/
 main.js
 .env
+src/components/chat

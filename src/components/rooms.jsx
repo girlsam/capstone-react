@@ -100,14 +100,14 @@ export default class Room extends Component {
                       <hr />
                       <Row>
                         <Col xs={12} md={6} lg={6}>
-                          <p className="modal-text"><i className="fa fa-bed" aria-hidden="true"></i> {el.morning_sleep}</p>
-                          <p className="modal-text"><i className="fa fa-bed" aria-hidden="true"></i> {el.night_sleep}</p>
-                          <p className="modal-text"><i className="fa fa-fire-extinguisher" aria-hidden="true"></i> {el.smoker_friendly}</p>
+                          <p className="modal-text"><i className="fa fa-map-marker" aria-hidden="true"></i> {el.zip_code}</p>
+                          <p className="modal-text"><i className="fa fa-usd" aria-hidden="true"></i> {el.rent_cost}</p>
+                          <p className="modal-text"><i className="fa fa-calendar-o" aria-hidden="true"></i> {el.lease_length} Months</p>
                         </Col>
                         <Col xs={12} md={6} lg={6}>
-                          <p className="modal-text"><i className="fa fa-sun-o" aria-hidden="true"></i> {el.weekday}</p>
-                          <p className="modal-text"><i className="fa fa-hourglass-end" aria-hidden="true"></i> It's the weekend... {el.weekend} </p>
-                          <p className="modal-text"> <i className="fa fa-moon-o" aria-hidden="true"></i> {el.after_hours}</p>
+                          <p className="modal-text"><i className="fa fa-check" aria-hidden="true"></i> {el.amenity_1}</p>
+                          <p className="modal-text"><i className="fa fa-check" aria-hidden="true"></i> {el.amenity_2} </p>
+                          <p className="modal-text"> <i className="fa fa-check" aria-hidden="true"></i> {el.amenity_3}</p>
                         </Col>
                       </Row>
                     </Modal.Body>

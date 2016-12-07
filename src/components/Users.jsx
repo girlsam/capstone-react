@@ -5,6 +5,7 @@ import Fetch from 'isomorphic-fetch';
 
 //components
 import NavbarInstance from './NavBar';
+import Chat from './Chat';
 
 const URL='https://newmate.herokuapp.com';
 
@@ -65,7 +66,7 @@ export default class User extends Component {
                   <Pager>
                     <Pager.Item href="#" className="buttons" onClick={() => this.open(el.id)}>Tell Me More</Pager.Item>
                       {' '}
-                    <Pager.Item href="#" className="buttons">Let's Chat</Pager.Item>
+                    <Pager.Item href="#" className="buttons" onClick={() => this.open(el.first_name)}>Let's Chat</Pager.Item>
                   </Pager>
                 </Jumbotron>
                 <Modal show={this.state.showModal === el.id} onHide={this.close}>
@@ -90,7 +91,20 @@ export default class User extends Component {
                   </Modal.Body>
                   <Modal.Footer>
                     <Pager>
-                      <Pager.Item href="#" className="buttons" onClick={this.close}>Close</Pager.Item>
+                      <Pager.Item hre f="#" className="buttons" onClick={this.close}>Close</Pager.Item>
+                    </Pager>
+                  </Modal.Footer>
+                </Modal>
+                <Modal show={this.state.showModal === el.first_name} onHide={this.close}>
+                  <Modal.Header closeButton>
+                    <Modal.Title className="modal-name">{el.first_name}, {el.age}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Chat />
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Pager>
+                      <Pager.Item hre f="#" className="buttons" onClick={this.close}>Close</Pager.Item>
                     </Pager>
                   </Modal.Footer>
                 </Modal>
