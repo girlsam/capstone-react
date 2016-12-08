@@ -14,6 +14,7 @@ Newmate is a site that helps roommates find compatible roommates. With 8 to 10,0
 - Back End:
   1. Node.js
   1. Express
+  1. PostgreSQL
   1. Knex
   1. Heroku (for deployment)
 
