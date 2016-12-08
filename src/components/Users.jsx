@@ -22,19 +22,20 @@ export default class User extends Component {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
   }
-    getInitialState() {
-      return { showModal: false }
-    }
 
-    close() {
-      this.setState({
-        showModal: false
-      });
-    }
+  getInitialState() {
+    return { showModal: false }
+  }
 
-    open(id) {
-      this.setState({ showModal: id });
-    }
+  close() {
+    this.setState({
+      showModal: false
+    });
+  }
+
+  open(id) {
+    this.setState({ showModal: id });
+  }
 
   getData(users) {
     return fetch(`${URL}/users`)
@@ -51,7 +52,6 @@ export default class User extends Component {
   }
 
   render() {
-
     return (
       <div>
         <div className="container-fluid">

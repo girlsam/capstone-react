@@ -46,7 +46,7 @@ export default class Chat extends Component {
         </div>
         <form onSubmit={(this.sendChat)}>
           <div className="chat_input">
-            <input ref="message" placeholder="Send a Message" className="chat_text" />
+            <input ref="message" placeholder="Send a Message..." className="chat_text" />
             <button type="submit" className="chat_submit fa fa-send"></button>
           </div>
         </form>
