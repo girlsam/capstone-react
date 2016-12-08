@@ -26451,11 +26451,6 @@
 	  }
 	
 	  _createClass(App, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      io.connect('http://localhost:3000');
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -58500,24 +58495,7 @@
 	                    el.age
 	                  )
 	                ),
-	                _react2.default.createElement(
-	                  _reactBootstrap.Modal.Body,
-	                  null,
-	                  _react2.default.createElement(_Chat2.default, null)
-	                ),
-	                _react2.default.createElement(
-	                  _reactBootstrap.Modal.Footer,
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactBootstrap.Pager,
-	                    null,
-	                    _react2.default.createElement(
-	                      _reactBootstrap.Pager.Item,
-	                      { hre: true, f: '#', className: 'buttons', onClick: _this3.close },
-	                      'Close'
-	                    )
-	                  )
-	                )
+	                _react2.default.createElement(_Chat2.default, null)
 	              )
 	            );
 	          })
@@ -58569,7 +58547,8 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
 	
-	    _this.state = {};
+	    _this.state = { messages: [] };
+	    _this.sendChat = _this.sendChat.bind(_this);
 	    return _this;
 	  }
 	
@@ -58578,12 +58557,23 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 	
-	      socket = io.connect('http://localhost:3000');
+	      socket = io.connect('http://newmate.herokuapp.com');
 	      socket.on('message', function (data) {
 	        console.log(data);
 	        _this2.setState({
-	          messages: data
+	          messages: _this2.state.messages.concat(data.message)
 	        });
+	      });
+	    }
+	  }, {
+	    key: 'sendChat',
+	    value: function sendChat(e) {
+	      e.preventDefault();
+	      var message = this.refs.message.value;
+	      this.refs.message.value = '';
+	      socket.emit('send', {
+	        message: message,
+	        from: 'user2'
 	      });
 	    }
 	  }, {
@@ -58591,8 +58581,28 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
-	        '"Boop"'
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'chat_s' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'bubble-1' },
+	            this.state.messages.map(function (el) {
+	              return el;
+	            })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          { onSubmit: this.sendChat },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'chat_input' },
+	            _react2.default.createElement('input', { ref: 'message', placeholder: 'Send a Message', className: 'chat_text' }),
+	            _react2.default.createElement('button', { type: 'submit', className: 'chat_submit fa fa-send' })
+	          )
+	        )
 	      );
 	    }
 	  }]);
