@@ -13,11 +13,11 @@ export default class Chat extends Component {
   }
 
   componentDidMount() {
-    socket = io.connect('http://newmate.herokuapp.com');
+    socket = io.connect('https://newmate.herokuapp.com');
     socket.on('message', (data) => {
       console.log(data);
       this.setState({
-        messages: this.state.messages.concat(data.message)
+        messages: this.state.messages.concat(data)
       })
     })
   }
@@ -36,11 +36,13 @@ export default class Chat extends Component {
     return (
       <div>
         <div className="chat_s">
-          <div className="bubble-1">
-            {this.state.messages.map(el =>
-              el
+          {this.state.messages.map(el => {
+            return (
+              <div className={el.from}>
+                {el.message}
+              </div>
             )}
-          </div>
+          )}
         </div>
         <form onSubmit={(this.sendChat)}>
           <div className="chat_input">
