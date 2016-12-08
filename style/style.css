@@ -43,6 +43,13 @@ a {
   background-color: #153dc7;
   border-color: #153dc7; }
 
+.navbar-inverse .navbar-toggle {
+  border: #153dc7 !important; }
+  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:after {
+    background-color: #153dc7; }
+  .navbar-inverse .navbar-toggle .navbar-inverse .navbar-collapse {
+    border-color: #153dc7 !important; }
+
 /*=====================
 Landing
 =====================*/
@@ -231,18 +238,18 @@ Chat
   background: #3dbbeb;
   color: white; }
 
-.bubble-1,
-.bubble-2 {
+.user1,
+.user2 {
   padding: 10px;
   margin: 13px 17px;
   width: 200px;
   font-size: 14px; }
 
-.bubble-1 {
+.user1 {
   border: 1px solid #3dbbeb;
   border-radius: 12px 12px 12px 0; }
 
-.bubble-2 {
+.user2 {
   border: 1px solid #d4d4d4;
   border-radius: 12px 12px 0 12px;
   margin-left: 160px; }

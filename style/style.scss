@@ -73,6 +73,16 @@ a {
   border-color: $accent-color;
 }
 
+.navbar-inverse .navbar-toggle {
+  border: $accent-color !important;
+  &:hover, &:after {
+    background-color: $accent-color;
+  }
+  .navbar-inverse .navbar-collapse {
+    border-color: $accent-color !important;
+  }
+}
+
 /*=====================
 Landing
 =====================*/
@@ -262,20 +272,20 @@ Chat
   color: white;
 }
 
-.bubble-1,
-.bubble-2 {
+.user1,
+.user2 {
   padding: 10px;
   margin: 13px 17px;
   width: 200px;
   font-size: 14px
 }
 
-.bubble-1 {
+.user1 {
   border: 1px solid $brand-font-color;
   border-radius: 12px 12px 12px 0
 }
 
-.bubble-2 {
+.user2 {
   border: 1px solid $content-color;
   border-radius: 12px 12px 0 12px;
   margin-left: 160px
