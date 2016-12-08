@@ -3,6 +3,7 @@ Newmate is a site that helps roommates find compatible roommates. With 8 to 10,0
 
 - Visit Deployed Site: [Newmate](http://bit.ly/newmate_me)
 - Visit Backend API Repo: [Server](http://github.com/newmate-server)
+- Visit Capstone [Slides](http://bit.ly/newmate_slides)
 
 ##### Technologies Used
 - Front End:
