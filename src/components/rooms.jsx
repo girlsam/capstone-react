@@ -34,7 +34,6 @@ export default class Room extends Component {
       this.setState({ showModal: id });
     }
 
-
   getData(rooms) {
     return fetch(`${ROOMS_URL}/rooms`)
     .then(res => {
